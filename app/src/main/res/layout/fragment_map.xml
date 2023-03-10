@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.belki.citybike.CityBikeViewModel" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mf_banner" />
+
+                <include
+                    android:id="@+id/mf_banner"
+                    layout="@layout/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:customVisibility="@{viewModel.isBannerVisible}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:viewModel="@{viewModel}" />
+
+                <ImageView
+                    android:id="@+id/custom_my_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/my_location_button_description"
+                    android:src="@drawable/ic_my_location_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/menu_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_menu_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mf_banner" />
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_24"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mf_banner" />
+
+                <Button
+                    android:id="@+id/start_button"
+                    style="@style/Widget.Material3.Button.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:elevation="8dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:minWidth="233dp"
+                    android:onClick="@{() -> viewModel.startStartARideEvent()}"
+                    android:text="@string/start_button_label"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/bottom_sheet"
+                style="@style/BottomSheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+                <!-- Bottom sheet contents. -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/handle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:src="@drawable/drag_handle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/station_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginEnd="32dp"
+                        android:text='@{viewModel.selectedStationName}'
+                        android:textAppearance="?textAppearanceHeadline1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/handle" />
+
+                    <TextView
+                        android:id="@+id/directions_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Directions"
+                        app:layout_constraintEnd_toEndOf="@id/station_name_text"
+                        app:layout_constraintStart_toStartOf="@+id/station_name_text"
+                        app:layout_constraintTop_toBottomOf="@id/station_name_text" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toEndOf="@id/station_name_text"
+                        app:layout_constraintStart_toStartOf="@id/station_name_text"
+                        app:layout_constraintTop_toBottomOf="@id/directions_text" />
+
+                    <TextView
+                        android:id="@+id/bikes_number_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text='@{viewModel.selectedStationFreeBikesString}'
+                        android:textAppearance="?textAppearanceHeadline3"
+                        app:layout_constraintStart_toStartOf="@id/station_name_text"
+                        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                    <TextView
+                        android:id="@+id/bikes_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/bikes"
+                        app:layout_constraintStart_toStartOf="@id/station_name_text"
+                        app:layout_constraintTop_toBottomOf="@+id/bikes_number_text" />
+
+                    <TextView
+                        android:id="@+id/empty_slots_number_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text='@{viewModel.selectedStationEmptySlotsString}'
+                        android:textAppearance="?textAppearanceHeadline3"
+                        app:layout_constraintBaseline_toBaselineOf="@id/bikes_number_text"
+                        app:layout_constraintStart_toStartOf="@id/empty_slots_text" />
+
+                    <TextView
+                        android:id="@+id/empty_slots_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:text="@string/empty_slots"
+                        app:layout_constraintBaseline_toBaselineOf="@id/bikes_text"
+                        app:layout_constraintStart_toEndOf="@id/bikes_text" />
+
+                    <Button
+                        android:id="@+id/bottom_sheet_start_button"
+                        style="@style/Widget.Material3.Button.IconButton.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        android:elevation="8dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:minWidth="233dp"
+                        android:onClick="@{() -> viewModel.startStartARideEvent()}"
+                        android:text="@string/start_button_label"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bikes_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?colorSurface"
+            app:headerLayout="@layout/header_navigation_drawer"
+            app:itemTextAppearance="@style/TextAppearance.CityBike.NavDrawerText"
+            app:itemVerticalPadding="16dp"
+            app:menu="@menu/navigation_drawer" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

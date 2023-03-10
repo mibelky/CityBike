@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorSurface"
+    app:layoutDescription="@xml/motion_scene_loading">
+
+    <ImageView
+        android:id="@+id/bike_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bike" />
+
+    <TextView
+        android:id="@+id/citybike_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/citybike"
+        android:textAppearance="@style/TextAppearance.CityBike.Logo"
+ />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

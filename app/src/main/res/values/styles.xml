@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@null</item>
+        <!-- Support library compatibility -->
+        <item name="background">@null</item>
+    </style>
+
+    <!-- SHAPE APPEARANCE STYLES -->
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+<!--    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">-->
+<!--        <item name="cornerFamily">rounded</item>-->
+<!--        <item name="cornerSize">28dp</item>-->
+<!--    </style>-->
+
+    <style name="BottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="backgroundTint">@color/custom_white</item>
+    </style>
+
+    <!-- TEXT APPEARANCE STYLES -->
+
+    <style name="TextAppearance.CityBike.H1" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/pt_root_ui_bold</item>
+        <item name="lineHeight">26dp</item>
+        <item name="android:letterSpacing">-0.025</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.H2" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/pt_root_ui_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:letterSpacing">-0.0277</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.H3" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/pt_root_ui_bold</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">-0.03125</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.Caption" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/pt_root_ui_medium</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:letterSpacing">-0.03125</item>
+        <item name="color">?colorOnSecondary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.CaptionMedium" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/pt_root_ui_medium</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.0357</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.CaptionSmall" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/pt_root_ui_regular</item>
+        <item name="lineHeight">9dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.BodyMedium" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/pt_root_ui_regular</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">-0.025</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/pt_root_ui_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.015</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.Logo" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/pt_root_ui_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CityBike.NavDrawerText" parent="TextAppearance.CityBike.Caption">
+        <item name="color">?colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.Material3.NavigationView.CityBikeNavigationView" parent="Widget.Material3.NavigationView">
+<!--        <item name="enforceMaterialTheme">false</item>-->
+    </style>
+
+    <style name="Widget.Material3.NavigationView.CityBikeDrawerLayout" parent="Widget.Material3.DrawerLayout">
+
+    </style>
+
+</resources>

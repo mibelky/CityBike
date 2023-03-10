@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title=""
+        app:itemVerticalPadding="16dp"
+        />
+    <item
+        android:id="@+id/history_item"
+        android:title="@string/history_item_text"
+        app:itemVerticalPadding="16dp"/>
+    <item
+        android:id="@+id/nearestFragment"
+        android:title="@string/nearest_stations_item_text"
+        app:itemVerticalPadding="16dp"/>
+    <item
+        android:id="@+id/payment_method_item"
+        android:title="@string/payment_method_item_text"
+        app:itemVerticalPadding="16dp"/>
+    <item
+        android:title=""
+        app:itemVerticalPadding="16dp"
+        />
+    <item
+        android:id="@+id/support_item"
+        android:title="@string/support_item_text"
+        app:itemVerticalPadding="16dp"/>
+</menu>

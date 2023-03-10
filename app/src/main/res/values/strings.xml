@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">City Bike</string>
+    <string name="my_location_button_description">My location button</string>
+    <string name="perm_request_rationale_title">Location permission</string>
+    <string name="perm_request_rationale">This application needs location permission for smooth user experience</string>
+    <string name="request_perm_again">Permit</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="permission_denied_explanation">Location permission is needed to get your location</string>
+    <string name="location_required_error">Location services must be enabled to get your location</string>
+    <string name="start_button_label">Start a ride</string>
+    <string name="bikes">Bikes</string>
+    <string name="empty_slots">Empty slots</string>
+    <string name="camera_tooltip">Point your camera at QR code on the trunk</string>
+    <string name="camera_banner_text">Application has no camera permission</string>
+    <string name="permit">Permit</string>
+    <string name="citybike">Citybike</string>
+    <string name="km">km</string>
+    <string name="min_by_foot">min by foot</string>
+    <string name="nearest_stations_title">Nearest stations</string>
+    <string name="history_item_text">History</string>
+    <string name="nearest_stations_item_text">Nearest Stations</string>
+    <string name="payment_method_item_text">Payment Method</string>
+    <string name="support_item_text">Support</string>
+    <string name="hello">Hello,</string>
+    <string name="veronica">Veronica</string>
+    <string name="profilePhotoUrl">https://cdnstorage.sendbig.com/unreal/female.webp</string>
+    <string name="profileErrorPhotoUrl">https://thispersondoesnotexist.com/</string>
+    <string name="aubrey">Aubrey</string>
+</resources>

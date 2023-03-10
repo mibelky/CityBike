@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="station"
+            type="com.belki.citybike.domain.Station" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/station_item_background"
+        android:elevation="2dp"
+        android:paddingStart="24dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:maxWidth="248dp"
+            android:text="@{station.name}"
+            android:textAppearance="?textAppearanceHeadline2"
+            app:layout_constraintBottom_toTopOf="@+id/distance_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Name of a station" />
+
+        <TextView
+            android:id="@+id/distance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="6dp"
+            app:distanceInMeters="@{station.distance}"
+            android:textAppearance="@style/TextAppearance.CityBike.CaptionMedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/name_text"
+            app:layout_constraintTop_toBottomOf="@+id/name_text"
+            tools:text="99,99" />
+
+        <TextView
+            android:id="@+id/km_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/km"
+            android:textAppearance="?textAppearanceBodyMedium"
+            app:layout_constraintBaseline_toBaselineOf="@+id/distance_text"
+            app:layout_constraintStart_toEndOf="@+id/distance_text" />
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:distanceToTime="@{station.distance}"
+            android:textAppearance="@style/TextAppearance.CityBike.CaptionMedium"
+            app:layout_constraintBaseline_toBaselineOf="@+id/km_text"
+            app:layout_constraintStart_toEndOf="@+id/km_text"
+            tools:text="99" />
+
+        <TextView
+            android:id="@+id/minutes_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min_by_foot"
+            android:textAppearance="?textAppearanceBodyMedium"
+            app:layout_constraintBaseline_toBaselineOf="@id/time_text"
+            app:layout_constraintStart_toEndOf="@id/time_text" />
+
+        <ImageView
+            android:id="@+id/status_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:stationPercentageImage="@{station}"
+            tools:src="@drawable/percentage_75" />
+
+        <TextView
+            android:id="@+id/bikes_number_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(station.freeBikes)}"
+            android:textAppearance="?textAppearanceHeadline3"
+            app:layout_constraintBottom_toTopOf="@+id/bikes_text"
+            app:layout_constraintEnd_toEndOf="@id/status_image"
+            app:layout_constraintStart_toStartOf="@id/status_image"
+            app:layout_constraintTop_toTopOf="@id/status_image"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="15" />
+
+        <TextView
+            android:id="@+id/bikes_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bikes"
+            android:textAppearance="@style/TextAppearance.CityBike.CaptionSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/status_image"
+            app:layout_constraintEnd_toEndOf="@+id/status_image"
+            app:layout_constraintStart_toStartOf="@+id/status_image"
+            app:layout_constraintTop_toBottomOf="@+id/bikes_number_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
